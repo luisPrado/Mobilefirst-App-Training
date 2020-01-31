@@ -1,5 +1,7 @@
 {
   "name": "onlineStoreMFP",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

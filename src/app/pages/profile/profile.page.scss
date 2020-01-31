@@ -1,0 +1,99 @@
+ion-content {
+    //--background: url(../../../assets/blurtennis.jpg) no-repeat top center/cover fixed, #fff;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    --background: none;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom:56px;
+}
+
+ion-toolbar {
+    --background: transparent;
+}
+
+.card {
+    margin: 0 auto;
+
+    .header {
+        height: 256px;
+        ion-icon{
+            display: block;
+            border-radius: 50%;
+            position: relative;
+            border: 1px solid #5c6a76;
+            background-color: #fff; 
+            left:85%;
+            height:30px;
+            width:30px;
+            bottom:10px;
+
+        }
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            position: relative;
+            margin: 0 auto;
+            .img{
+                    display: block;
+                    border-radius: 50%;
+                    position: absolute;
+                    bottom: calc(-1*(80px + 4px));
+                    border: 1px solid #5c6a76;
+                    background-color: #fff;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    width: 160px;
+                    height: 160px;
+            }
+            
+            ion-icon{
+                display: block;
+                border-radius: 50%;
+                position: absolute;
+                bottom: calc(-1*(80px + 4px));
+                border: 1px solid #5c6a76;
+                background-color: #fff; 
+                left:100px;
+                height:40px;
+                width:40px;
+
+            }
+        }
+    }
+}
+
+.card-body {
+    background-color: rgb(56, 128, 255);
+    //rgb(56, 128, 255)
+    padding: 30px;
+    height: calc(100vh - (200px + 56px));
+    overflow: hidden;
+
+    .user-meta {
+        padding-top: 40px;
+
+        .playername {
+            font-size: 24px;
+            font-weight: 600;
+            //color: #303940;
+            color:rgb(12, 209, 232);
+        }
+        .ranking{
+            color:rgb(255,255,255);
+        }
+        .country {
+            font-size: 90%;
+            color:rgb(255,255,255);
+            //color: #949ea6;
+            text-transform: uppercase;
+            margin: 0 auto;
+        }
+    }
+}
+
+

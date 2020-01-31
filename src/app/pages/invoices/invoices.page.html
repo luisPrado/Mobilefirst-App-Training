@@ -1,0 +1,48 @@
+<!-- student-list.page.html -->
+<ion-header color="primary">
+  <ion-toolbar color="primary"> 
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Invoices
+    </ion-title>
+    <ion-buttons slot="end"  *ngIf="isLogged">
+      <ion-button (click)="goToPage('profile')">
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content color="primary">
+  
+  <ion-list *ngIf="existsData" class="ios list-ios hydrated" >
+    <ion-list-header class="ios hydrated" color="primary" >
+      Orders
+    </ion-list-header>
+    <ion-item class="item-label item ios in-list ion-focusable hydrated" 
+      *ngFor="let item of invoiceData" color="primary"  (click)='goToPage("invoice",{id:item._id})'>
+      <ion-avatar slot="start" class="ios hydrated">
+        <img src="{{item.json.image}}">
+      </ion-avatar>
+     <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated"> 
+        <h2>{{item.json.name}}</h2>
+        <h3>{{item.json.date}}</h3>
+       
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="!existsData"  class="ios list-ios hydrated" >
+    <ion-list-header class="ios hydrated" color="primary" >
+      Orders
+    </ion-list-header>
+    <ion-card color="light"  >
+      <ion-card-header>
+        <ion-card-subtitle>There`s  no invoices </ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </ion-list>
+ 
+ 
+</ion-content>

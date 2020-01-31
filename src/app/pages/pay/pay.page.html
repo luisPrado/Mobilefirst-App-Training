@@ -1,0 +1,37 @@
+<!-- student-list.page.html -->
+<ion-header color="primary">
+  <ion-toolbar color="primary"> 
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      PAY
+    </ion-title>
+    <ion-buttons slot="end"  *ngIf="isLogged">
+      <ion-button (click)="goToPage('profile')">
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+
+<ion-content color="primary">
+  <ion-card color="light" >
+
+    <ion-card-header>
+      <ion-card-subtitle>Your total is ${{total}} </ion-card-subtitle>
+      <ion-card-title>Thank you for buying with us </ion-card-title>
+      
+    </ion-card-header>
+  
+    
+    <div padding>
+      
+      <ion-button size="large" type="submit" expand="block" color="dark" (click)="goToPage('products')"> Go to Home</ion-button>
+    </div>
+  </ion-card>
+ 
+  
+  
+</ion-content>

@@ -1,0 +1,112 @@
+<ion-header translucent no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="light">PROFILE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content fullscreen="true" slot="fixed" [ngStyle]="{'background-image': 'url('+imageBackground+ ')'}" >
+  <div class="card">
+    <div class="header">
+      <div class="avatar">
+        <div class="img"  [ngStyle]="{'background-image': 'url('+imageProfile+ ')'}" alt=""></div>
+        <ion-icon slot="start" name="camera" (click)="selectImage('profile_picture')"></ion-icon>
+      </div>
+      <ion-icon slot="start" name="camera" (click)="selectImage('background_picture')"></ion-icon>
+    </div>
+  
+    <div class="card-body">
+      <div class="user-meta ion-text-center">
+        <h3 class="playername">{{userName}}</h3>
+        <h5 class="country">Costa Rica</h5>
+        <h6 class="ranking" color="light">Nivel: <ion-chip color="light">
+          <ion-label>2</ion-label>
+          </ion-chip>
+        </h6>
+      </div>
+      <ion-button expand="full">http://{{userName}}.com</ion-button>
+      <ion-button expand="full" color="secondary">@{{userName}} on Twitter</ion-button>
+      <ion-button expand="full" color="secondary">View profile at ATP</ion-button>
+    </div>
+  </div>
+  <!--
+  <h3 *ngIf="images.length == 0" text-center>Please Select Image!</h3>
+ 
+  <ion-list>
+    <ion-item *ngFor="let img of images; index as pos" text-wrap>
+      <ion-thumbnail slot="start">
+        <img [src]="img.path"/>
+      </ion-thumbnail>
+      <ion-label>
+        {{ img.name }}
+      </ion-label>
+      <ion-button slot="end" fill="clear" (click)="startUpload(img)">
+        <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
+      </ion-button>
+      <ion-button slot="end" fill="clear" (click)="deleteImage(img, pos)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  -->
+
+
+</ion-content>
+<!--
+<ion-footer>
+<ion-toolbar color="primary">
+  <ion-button fill="clear" expand="full" color="light" (click)="selectImage()">
+    <ion-icon slot="start" name="camera"></ion-icon>
+    Select Image</ion-button>
+</ion-toolbar>
+</ion-footer>-->                                                                          
+
+
+
+<!--
+<ion-content padding>
+  <ion-card  *ngFor="let item of itemsData">
+    <img src="{{profile.image}}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{ profile.name }}
+        </ion-card-title>
+      <p>
+        {{ profile.country }}
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <h3 *ngIf="images.length == 0" text-center>Please Select Image!</h3>
+ 
+  <ion-list>
+    <ion-item *ngFor="let img of images; index as pos" text-wrap>
+      <ion-thumbnail slot="start">
+        <ion-img [src]="img.path"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        {{ img.name }}
+      </ion-label>
+      <ion-button slot="end" fill="clear" (click)="startUpload(img)">
+        <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
+      </ion-button>
+      <ion-button slot="end" fill="clear" (click)="deleteImage(img, pos)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-button fill="clear" expand="full" color="light" (click)="selectImage()">
+      <ion-icon slot="start" name="camera"></ion-icon>
+      Select Image</ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+-->

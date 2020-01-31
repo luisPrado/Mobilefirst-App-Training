@@ -1,0 +1,43 @@
+<!-- student-list.page.html -->
+<ion-header color="primary">
+  <ion-toolbar color="primary"> 
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      PRODUCTS
+    </ion-title>
+    <ion-buttons slot="end"  *ngIf="isLogged">
+      <ion-button (click)="goToPage('profile')">
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <ion-card color="light" *ngFor="let item of itemsData" (click)="goToPage('details',{id:item.id})">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4"> 
+          <img src={{item.image}}/>
+        </ion-col>
+        <ion-col size="8">
+          <ion-card-header>
+            <ion-card-subtitle>{{ item.brand }}</ion-card-subtitle>
+            <ion-card-title>{{ item.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ item.description}}
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+      
+  
+    
+  </ion-card>
+ 
+  
+  
+</ion-content>

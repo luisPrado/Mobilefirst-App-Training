@@ -1,0 +1,54 @@
+<!-- student-list.page.html -->
+<ion-header color="primary">
+  <ion-toolbar color="primary"> 
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      DETAILS
+    </ion-title>
+    <ion-buttons slot="end"  *ngIf="isLogged">
+      <ion-button (click)="goToPage('profile')">
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+
+<ion-content color="primary">
+  <ion-card color="light" >
+
+    <ion-card-header>
+      <img src="{{item.image}}" />
+      <ion-card-subtitle>{{ item.brand }}</ion-card-subtitle>
+      <ion-card-title>{{ item.name }}</ion-card-title>
+      
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ item.description}}
+      Price: ${{ item.price}}
+      
+    </ion-card-content>
+    <div padding>
+      <ion-item>
+        <ion-label>Quantity</ion-label>
+        <ion-select [(ngModel)]="item.quantity"  value="1" okText="OK" cancelText="Dismiss">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div padding>
+      
+      <ion-button size="large" type="submit" expand="block" color="dark" (click)="addToCart()"> Add to Cart</ion-button>
+    </div>
+    
+  </ion-card>
+ 
+  
+  
+</ion-content>

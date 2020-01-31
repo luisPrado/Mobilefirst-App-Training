@@ -1,0 +1,58 @@
+<!-- student-list.page.html -->
+<ion-header color="primary">
+  <ion-toolbar color="primary"> 
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Cart
+    </ion-title>
+    <ion-buttons *ngIf="isLogged" slot="end">
+      <ion-button (click)="goToPage('profile')">
+        <ion-icon slot="icon-only" name="person" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content color="primary">
+  
+  <ion-list  *ngIf="existsData"  class="ios list-ios hydrated" >
+    <ion-list-header class="ios hydrated" color="primary" >
+      Cart Items
+    </ion-list-header>
+    <ion-item class="item-label item ios in-list ion-focusable hydrated" 
+      *ngFor="let item of cartData" color="primary">
+      <ion-avatar slot="start" class="ios hydrated">
+        <img src="{{item.json.image}}">
+      </ion-avatar>
+     <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated"> 
+        <h2>{{item.json.name}}</h2>
+        <h3>{{item.json.description}}</h3>
+        <h4>Price: {{item.json.price}}.</h4>
+        <h5>Quantity: {{item.json.quantity}}</h5>
+       
+      </ion-label>
+      <ion-icon slot="end" name="trash" (click)='deleteItem(item._id)'></ion-icon>
+    </ion-item>
+  </ion-list>
+  <ion-list  *ngIf="!existsData"  class="ios list-ios hydrated" >
+    <ion-list-header class="ios hydrated" color="primary" >
+      Cart Items
+    </ion-list-header>
+  </ion-list>
+  <ion-card color="light" *ngIf="existsData" >
+    <ion-card-header>
+      <ion-card-subtitle>Your total is ${{total}} </ion-card-subtitle>
+    </ion-card-header>
+    <div padding>
+      <ion-button size="large" type="submit" expand="block" color="dark" (click)='pay("pay",{total:total})'> Proceed to checkout</ion-button>
+    </div>
+  </ion-card>
+  <ion-card color="light" *ngIf="!existsData" >
+    <ion-card-header>
+      <ion-card-subtitle>There`s  no items in the cart </ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+ 
+</ion-content>
